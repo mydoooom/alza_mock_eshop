@@ -49,7 +49,7 @@ function App () {
           ? products.length
             ? (
               <>
-                <Typography variant='h3' color='primary'>Nejprodávanější</Typography>
+                <Typography variant='h3' color='primary.light'>Nejprodávanější</Typography>
                 <CarouselPanel slides={products}/>
                 <ProductsListFilter filters={filters} products={products}/>
               </>

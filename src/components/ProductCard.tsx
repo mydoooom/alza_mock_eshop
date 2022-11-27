@@ -35,25 +35,25 @@ const BuyButton = () => {
   return (
     <>
       <Button
-        variant="outlined"
-        color="success"
+        variant='outlined'
+        color='success'
         disableElevation
         sx={styles.buyButton}
       >
         Koupit
       </Button>
       <Button
-        id="buy"
+        id='buy'
         onClick={handleClick}
-        variant="contained"
-        color="success"
+        variant='contained'
+        color='success'
         disableElevation
         sx={styles.buyOptionsButton}
       >
         <ExpandMoreIcon/>
       </Button>
       <Menu
-        id="basic-menu"
+        id='basic-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -79,7 +79,7 @@ const PricePanel = ({ priceInfo, showPriceWithVat = false, showBuyBtn = false }:
   <>
     <Grid container justifyContent='space-between'>
       <Grid item>
-        <Typography variant='h3' color='success.main' sx={{margin: '0'}}>{priceInfo.priceWithoutVat}</Typography>
+        <Typography variant='h3' color='success.main' sx={{ margin: '0' }}>{priceInfo.priceWithoutVat}</Typography>
         {showPriceWithVat && (
           <Typography>{priceInfo.priceWithVat}</Typography>
         )}
@@ -99,7 +99,7 @@ interface Props {
 }
 
 export const ProductCard = ({ product, isInCarousel }: Props) => (
-  <Card variant={'outlined'} sx={styles.card}>
+  <Card variant='outlined' sx={styles.card}>
     {isInCarousel
       ? (
         <>

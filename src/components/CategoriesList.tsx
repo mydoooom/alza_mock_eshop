@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material'
+import { Box, Button, Grid } from '@mui/material'
 import { styles } from './CategoriesList.style'
 
 interface Props {
@@ -7,12 +7,12 @@ interface Props {
 
 export const CategoriesList = ({ categories }: Props) => {
   return (
-    <Grid container spacing={1} sx={{ mb: 7 }}>
+    <Box sx={{ mb: 7 }} display='flex' flexWrap='wrap' gap={1}>
       {categories.map((category, index) => (
         <Grid item key={index} lg={2}>
           <Button variant='outlined' sx={styles.btn}>{category}</Button>
         </Grid>
       ))}
-    </Grid>
+    </Box>
   )
 }

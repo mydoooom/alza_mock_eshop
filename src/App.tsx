@@ -43,13 +43,13 @@ function App () {
   return (
     <>
       <Container maxWidth='xl'>
-        <Typography variant='h5' gutterBottom color='primary'>Notebooky</Typography>
+        <Typography variant='h2' color='primary'>Notebooky</Typography>
         <CategoriesList categories={ntbCategories}/>
-        <Typography variant='h5' gutterBottom color='primary'>Nejprodávanější</Typography>
         {!failedToLoad
           ? products.length
             ? (
               <>
+                <Typography variant='h3' color='primary'>Nejprodávanější</Typography>
                 <CarouselPanel slides={products}/>
                 <ProductsListFilter filters={filters} products={products}/>
               </>

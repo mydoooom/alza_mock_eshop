@@ -79,7 +79,7 @@ const PricePanel = ({ priceInfo, showPriceWithVat = false, showBuyBtn = false }:
   <>
     <Grid container justifyContent='space-between'>
       <Grid item>
-        <Typography variant='h6' color='success.main'>{priceInfo.priceWithoutVat}</Typography>
+        <Typography variant='h3' color='success.main' sx={{margin: '0'}}>{priceInfo.priceWithoutVat}</Typography>
         {showPriceWithVat && (
           <Typography>{priceInfo.priceWithVat}</Typography>
         )}
@@ -105,7 +105,7 @@ export const ProductCard = ({ product, isInCarousel }: Props) => (
         <>
           <CardMedia component='img' image={product.img} alt={product.title} sx={styles.image}></CardMedia>
           <CardContent>
-            <Typography gutterBottom><strong>{product.name}</strong></Typography>
+            <Typography variant='h4'><strong>{product.name}</strong></Typography>
             <Rating rating={product.rating}/>
             <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
             <PricePanel priceInfo={product.priceInfo}></PricePanel>
@@ -116,7 +116,7 @@ export const ProductCard = ({ product, isInCarousel }: Props) => (
         <>
           <Box>
             <CardContent>
-              <Typography gutterBottom><strong>{product.name}</strong></Typography>
+              <Typography variant='h4'><strong>{product.name}</strong></Typography>
               <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
             </CardContent>
           </Box>

@@ -6,6 +6,7 @@ import { styles } from './ProductsListFilter.style'
 
 const listFilter = (list: any[], criterion: string) => {
   switch (criterion) {
+    // Sorting top products by a number of stars is not ideal
     case 'top':
       return [...list].sort((a, b) => b.rating - a.rating)
     // Couldn't find a criterion in the API by which I could sort items by the bestsellers

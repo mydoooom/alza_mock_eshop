@@ -22,7 +22,11 @@ export const styles = {
     textTransform: 'unset',
     p: '0.2em 0.5em',
     borderTopRightRadius: '0',
-    borderBottomRightRadius: '0'
+    borderBottomRightRadius: '0',
+    borderRight: 'none',
+    '&:hover': {
+      borderRight: 'none',
+    }
   },
   buyOptionsButton: {
     minWidth: 'unset',

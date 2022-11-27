@@ -20,7 +20,17 @@ export const CarouselPanel = ({ slides }: Props) => {
     <Box sx={styles.carousel}>
       <Swiper
         modules={[Navigation]}
-        slidesPerView={5}
+        slidesPerView={1}
+        breakpoints={
+          {
+            1000: {
+              slidesPerView: 4
+            },
+            500: {
+              slidesPerView: 3
+            }
+          }
+        }
         loop={true}
         style={{ padding: '1px' }}
         onSwiper={(swiper) => {

@@ -11,7 +11,7 @@ function App () {
 
   useEffect(() => {
     loadAlzaData().then(data =>
-      setProducts(data.data)
+      setProducts(data)
     ).catch(() => {
       setFailedToLoad('Načtení produktů se nepodařilo :(')
       throw Error('Products failed to load.')

@@ -8,5 +8,6 @@ export const loadAlzaData = async () => {
     },
     body: JSON.stringify(alzaBody),
   })
-  return await res.json()
+  const data = await res.json()
+  return data?.data as any[]
 }

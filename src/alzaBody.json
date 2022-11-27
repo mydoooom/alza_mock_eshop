@@ -1,0 +1,19 @@
+{
+  "filterParameters": {
+    "id": 18855843,
+    "isInStockOnly": false,
+    "newsOnly": false,
+    "wearType": 0,
+    "orderBy": 0,
+    "page": 1,
+    "params": [{
+      "tId": 0,
+      "v": []
+    }],
+    "producers": [],
+    "sendPrices": true,
+    "type": "action",
+    "typeId": "",
+    "branchId": ""
+  }
+}

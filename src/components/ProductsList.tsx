@@ -1,5 +1,5 @@
-import { ProductCard } from './ProductCard'
 import { Box, Grid } from '@mui/material'
+import { ProductCard } from './ProductCard'
 
 interface Props {
   products: any[]

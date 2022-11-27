@@ -100,34 +100,37 @@ interface Props {
 
 export const ProductCard = ({ product, isInCarousel }: Props) => (
   <Card variant={'outlined'} sx={styles.card}>
-    {isInCarousel ? (
-      <>
-        <CardMedia component='img' image={product.img} alt={product.title} sx={styles.image}></CardMedia>
-        <CardContent>
-          <Typography gutterBottom><strong>{product.name}</strong></Typography>
-          <Rating rating={product.rating}/>
-          <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
-          <PricePanel priceInfo={product.priceInfo}></PricePanel>
-        </CardContent>
-      </>
-    ) : (
-      <>
-        <Box>
-          <CardContent>
-            <Typography gutterBottom><strong>{product.name}</strong></Typography>
-            <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
-          </CardContent>
-        </Box>
-        <Box>
+    {isInCarousel
+      ? (
+        <>
           <CardMedia component='img' image={product.img} alt={product.title} sx={styles.image}></CardMedia>
           <CardContent>
+            <Typography gutterBottom><strong>{product.name}</strong></Typography>
             <Rating rating={product.rating}/>
-            <PricePanel priceInfo={product.priceInfo} showPriceWithVat showBuyBtn></PricePanel>
+            <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
+            <PricePanel priceInfo={product.priceInfo}></PricePanel>
           </CardContent>
-          <Typography align='center' gutterBottom><strong>{product.avail}</strong></Typography>
-        </Box>
-      </>
-    )}
+        </>
+      )
+      : (
+        <>
+          <Box>
+            <CardContent>
+              <Typography gutterBottom><strong>{product.name}</strong></Typography>
+              <Typography variant='body2' sx={styles.description} mb={3}>{product.spec}</Typography>
+            </CardContent>
+          </Box>
+          <Box>
+            <CardMedia component='img' image={product.img} alt={product.title} sx={styles.image}></CardMedia>
+            <CardContent>
+              <Rating rating={product.rating}/>
+              <PricePanel priceInfo={product.priceInfo} showPriceWithVat showBuyBtn></PricePanel>
+            </CardContent>
+            <Typography align='center' gutterBottom><strong>{product.avail}</strong></Typography>
+          </Box>
+        </>
+      )
+    }
   </Card>
 )
 

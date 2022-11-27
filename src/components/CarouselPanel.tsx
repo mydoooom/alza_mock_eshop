@@ -1,6 +1,9 @@
-import { Box } from '@mui/material'
+import { useRef } from 'react'
+import { Box, Button } from '@mui/material'
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper'
+import { Navigation, type Swiper as SwiperRef } from 'swiper'
 import { ProductCard } from './ProductCard'
 import { styles } from './CarouselPanel.style'
 import 'swiper/css/navigation'
@@ -11,14 +14,18 @@ interface Props {
 }
 
 export const CarouselPanel = ({ slides }: Props) => {
+  const swiperRef = useRef<SwiperRef>()
+
   return (
     <Box sx={styles.carousel}>
       <Swiper
         modules={[Navigation]}
         slidesPerView={5}
-        navigation
         loop={true}
         style={{ padding: '1px' }}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper
+        }}
       >
         {slides && slides.map(slide => (
           <SwiperSlide key={slide.id} style={{ height: 'auto' }}>
@@ -26,6 +33,24 @@ export const CarouselPanel = ({ slides }: Props) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <Box sx={styles.carouselNav}>
+        <Button
+          variant='contained'
+          disableElevation
+          sx={[styles.carouselNavBtn, styles.carouselNavBtnLeft]}
+          onClick={() => swiperRef.current?.slidePrev()}
+        >
+          <ArrowBackIosNewIcon/>
+        </Button>
+        <Button
+          variant='contained'
+          disableElevation
+          sx={[styles.carouselNavBtn, styles.carouselNavBtnRight]}
+          onClick={() => swiperRef.current?.slideNext()}
+        >
+          <ArrowForwardIosIcon/>
+        </Button>
+      </Box>
     </Box>
   )
 }

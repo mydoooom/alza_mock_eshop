@@ -40,8 +40,6 @@ function App () {
     priceHighToLow: 'Od nejdražšího'
   }
 
-  console.log(products)
-
   return (
     <>
       <Container>

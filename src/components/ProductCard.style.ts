@@ -1,6 +1,7 @@
 export const styles = {
   card: {
     display: 'flex',
+    margin: '0 auto',
     border: 'unset',
     boxShadow: 'unset',
     flexDirection: 'column',

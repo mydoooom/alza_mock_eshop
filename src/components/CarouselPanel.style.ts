@@ -11,7 +11,9 @@ export const styles = {
     height: '100%',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    zIndex: '10',
+    pointerEvents: 'none'
 
   },
   carouselNavBtn: {
@@ -19,9 +21,11 @@ export const styles = {
     p: '2em 0em'
   },
   carouselNavBtnLeft: {
-    marginLeft: '-30px'
+    marginLeft: '-10px',
+    pointerEvents: 'auto',
   },
   carouselNavBtnRight: {
-    marginRight: '-30px'
+    marginRight: '-10px',
+    pointerEvents: 'auto',
   },
 }

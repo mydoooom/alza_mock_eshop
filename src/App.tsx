@@ -42,7 +42,7 @@ function App () {
 
   return (
     <>
-      <Container>
+      <Container maxWidth='xl'>
         <Typography variant='h5' gutterBottom color='primary'>Notebooky</Typography>
         <CategoriesList categories={ntbCategories}/>
         <Typography variant='h5' gutterBottom color='primary'>Nejprodávanější</Typography>

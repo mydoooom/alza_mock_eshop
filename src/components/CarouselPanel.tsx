@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, type Swiper as SwiperRef } from 'swiper'
 import { ProductCard } from './ProductCard'
 import { styles } from './CarouselPanel.style'
+import { theme } from '../theme'
 import 'swiper/css/navigation'
 import 'swiper/css'
 
@@ -15,22 +16,27 @@ interface Props {
 
 export const CarouselPanel = ({ slides }: Props) => {
   const swiperRef = useRef<SwiperRef>()
+  const muiBreakpoints = theme.breakpoints.values
+  const carouselBreakpoints = {
+    [muiBreakpoints.sm]: {
+      slidesPerView: 2,
+    },
+    [muiBreakpoints.md]: {
+      slidesPerView: 3,
+    },
+    [muiBreakpoints.lg]: {
+      slidesPerView: 4,
+    },
+    [muiBreakpoints.xl]: {
+      slidesPerView: 5,
+    }
+  }
 
   return (
     <Box sx={styles.carousel}>
       <Swiper
         modules={[Navigation]}
-        slidesPerView={1}
-        breakpoints={
-          {
-            1000: {
-              slidesPerView: 4
-            },
-            500: {
-              slidesPerView: 3
-            }
-          }
-        }
+        breakpoints={carouselBreakpoints}
         loop={true}
         style={{ padding: '1px' }}
         onSwiper={(swiper) => {

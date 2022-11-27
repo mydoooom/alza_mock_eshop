@@ -4,10 +4,11 @@ import { isEmpty } from 'lodash'
 import { ProductsList } from './ProductsList'
 import { styles } from './ProductsListFilter.style'
 
-const listFilter = (list: any[], criterium: string) => {
-  switch (criterium) {
+const listFilter = (list: any[], criterion: string) => {
+  switch (criterion) {
     case 'top':
       return [...list].sort((a, b) => b.rating - a.rating)
+    // Couldn't find a criterion in the API by which I could sort items by the bestsellers
     case 'priceLowToHigh':
       return [...list].sort((a, b) => a.priceInfo.priceNoCurrency - b.priceInfo.priceNoCurrency)
     case 'priceHighToLow':

@@ -2,7 +2,7 @@ import { ProductCard } from './ProductCard'
 import { Box, Grid } from '@mui/material'
 
 interface Props {
-    products: any[]
+  products: any[]
 }
 
 export const ProductsList = ({ products }: Props) => (

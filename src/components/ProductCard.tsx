@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import {Box, Button, Card, CardContent, CardMedia, Grid, Menu, MenuItem, Typography} from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Grid, Menu, MenuItem, Typography } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 import StarOutlineIcon from '@mui/icons-material/StarOutline'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { times } from 'lodash'
 import { styles } from './ProductCard.style'
 
 interface RatingProps {
-    rating: number
+  rating: number
 }
 
 const Rating = ({ rating }: RatingProps) => {
@@ -34,14 +35,22 @@ const BuyButton = () => {
   return (
     <>
       <Button
+        variant="outlined"
+        color="success"
+        disableElevation
+        sx={styles.buyButton}
+      >
+        Koupit
+      </Button>
+      <Button
         id="buy"
         onClick={handleClick}
         variant="contained"
         color="success"
         disableElevation
-        sx={styles.buyButton}
+        sx={styles.buyOptionsButton}
       >
-        Koupit ▾
+        <ExpandMoreIcon/>
       </Button>
       <Menu
         id="basic-menu"
@@ -61,16 +70,16 @@ const BuyButton = () => {
 }
 
 interface PricePanelProps {
-    priceInfo: any
-    showPriceWithVat?: boolean
-    showBuyBtn?: boolean
+  priceInfo: any
+  showPriceWithVat?: boolean
+  showBuyBtn?: boolean
 }
 
 const PricePanel = ({ priceInfo, showPriceWithVat = false, showBuyBtn = false }: PricePanelProps) => (
   <>
     <Grid container justifyContent='space-between'>
       <Grid item>
-        <Typography variant='h6' sx={styles.priceWithoutVat}>{priceInfo.priceWithoutVat}</Typography>
+        <Typography variant='h6' color='success.main'>{priceInfo.priceWithoutVat}</Typography>
         {showPriceWithVat && (
           <Typography>{priceInfo.priceWithVat}</Typography>
         )}
@@ -85,8 +94,8 @@ const PricePanel = ({ priceInfo, showPriceWithVat = false, showBuyBtn = false }:
 )
 
 interface Props {
-    product: any,
-    isInCarousel: boolean
+  product: any,
+  isInCarousel: boolean
 }
 
 export const ProductCard = ({ product, isInCarousel }: Props) => (

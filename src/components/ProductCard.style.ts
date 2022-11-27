@@ -7,7 +7,7 @@ export const styles = {
     justifyContent: 'space-between',
     height: '100%',
     maxWidth: '300px',
-},
+  },
   description: {
     display: '-webkit-box',
     WebkitBoxOrient: 'vertical',
@@ -18,10 +18,19 @@ export const styles = {
     width: '70%',
     margin: ' 0 auto',
   },
-  priceWithoutVat: {
-    color: 'success.main',
-  },
   buyButton: {
+    textTransform: 'unset',
     p: '0.2em 0.5em',
+    borderTopRightRadius: '0',
+    borderBottomRightRadius: '0'
+  },
+  buyOptionsButton: {
+    minWidth: 'unset',
+    p: '0.2em',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: 'success.main',
+    borderTopLeftRadius: '0',
+    borderBottomLeftRadius: '0',
   }
 }

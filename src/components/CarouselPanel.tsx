@@ -7,8 +7,9 @@ import 'swiper/css/navigation'
 import 'swiper/css'
 
 interface Props {
-    slides: Array<any>
+  slides: Array<any>
 }
+
 export const CarouselPanel = ({ slides }: Props) => {
   return (
     <Box sx={styles.carousel}>
@@ -17,10 +18,10 @@ export const CarouselPanel = ({ slides }: Props) => {
         slidesPerView={5}
         navigation
         loop={true}
-        style={{padding: '1px'}}
+        style={{ padding: '1px' }}
       >
         {slides && slides.map(slide => (
-          <SwiperSlide key={slide.id} style={{height: 'auto'}}>
+          <SwiperSlide key={slide.id} style={{ height: 'auto' }}>
             <ProductCard product={slide} isInCarousel/>
           </SwiperSlide>
         ))}

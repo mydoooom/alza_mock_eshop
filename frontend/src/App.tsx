@@ -56,7 +56,7 @@ function App () {
             )
             : (
               <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <CircularProgress sx={{ display: 'flex', justifyContent: 'center' }}/>
+                <CircularProgress />
               </Box>
             )
           : <Alert severity="error">Načtení produktů se nezdařilo :(</Alert>

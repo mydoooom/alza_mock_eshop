@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Alert, Box, CircularProgress, Container, Typography } from '@mui/material'
-import { loadAlzaData } from './dataFetch/getData'
+import loadAlzaData from './loadAlzaData'
 import { CategoriesList } from './components/CategoriesList'
 import { CarouselPanel } from './components/CarouselPanel'
 import { ProductsListFilter } from "./components/ProductsListFilter"

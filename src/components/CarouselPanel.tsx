@@ -62,6 +62,7 @@ export const CarouselPanel = ({ slides }: Props) => {
           variant='contained'
           disableElevation
           sx={[styles.carouselNavBtn, styles.carouselNavBtnRight]}
+
           onClick={() => swiperRef.current?.slideNext()}
         >
           <ArrowForwardIosIcon/>
